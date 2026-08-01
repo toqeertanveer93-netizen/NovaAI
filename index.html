@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaAI</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body id="home">
+
+<!-- Loader -->
+<div id="loader">
+    <div class="loader-logo">🤖 NovaAI</div>
+    <div class="loader-spinner"></div>
+    <p>Loading AI...</p>
+</div>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+
+<div class="logo">
+NovaAI
+</div>
+
+<ul class="menu">
+
+<li><a href="#home">Home</a></li>
+<li><a href="#tools">AI Tools</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#pricing">Pricing</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<button class="login-btn" onclick="openLogin()">
+Login
+</button>
+
+<button class="profile-btn" onclick="openProfile()">
+👤 Profile
+</button>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="badge">
+🚀 20+ Powerful AI Tools
+</div>
+
+<h1>
+One Platform. Unlimited AI Power.
+</h1>
+
+<p>
+Chat • Image • Video • Voice • Code • Music • 20+ AI Tools
+</p>
+
+<a href="chat.html">
+<button class="hero-btn">
+Get Started
+</button>
+</a>
+
+</section>
+
+<!-- AI Tools -->
+
+<section class="features" id="tools">
+
+<h2>Our AI Tools</h2>
+
+<div class="search-box">
+<input id="toolSearch" type="text" placeholder="🔍 Search AI Tools...">
+</div>
+
+<p id="noResult">
+❌ No AI Tool Found
+</p>
+
+<div class="feature-grid">
+
+<a href="chat.html" class="card-link">
+<div class="card">
+<h3>💬 AI Chat</h3>
+<p>Ask anything and get instant answers.</p>
+</div>
+</a>
+
+<a href="image.html" class="card-link">
+<div class="card">
+<h3>🎨 AI Image</h3>
+<p>Create AI generated images.</p>
+</div>
+</a>
+
+<a href="video.html" class="card-link">
+<div class="card">
+<h3>🎥 AI Video</h3>
+<p>Create videos using AI.</p>
+</div>
+</a>
+
+<a href="code.html" class="card-link">
+<div class="card">
+<h3>💻 AI Code</h3>
+<p>Generate programming code.</p>
+</div>
+</a>
+
+<a href="voice.html" class="card-link">
+<div class="card">
+<h3>🎙️ AI Voice</h3>
+<p>Create AI voice and audio.</p>
+</div>
+</a>
+
+<a href="music.html" class="card-link">
+<div class="card">
+<h3>🎵 AI Music</h3>
+<p>Create music with AI.</p>
+</div>
+</a>
+
+<a href="writer.html" class="card-link">
+<div class="card">
+<h3>📝 AI Writer</h3>
+<p>Write blogs and articles.</p>
+</div>
+</a>
+
+<a href="pdf.html" class="card-link">
+<div class="card">
+<h3>📄 AI PDF</h3>
+<p>Summarize PDF files.</p>
+</div>
+</a>
+
+<a href="translator.html" class="card-link">
+<div class="card">
+<h3>🌐 AI Translator</h3>
+<p>Translate languages instantly.</p>
+</div>
+</a>
+
+<a href="presentation.html" class="card-link">
+<div class="card">
+<h3>📊 AI Presentation</h3>
+<p>Create presentations.</p>
+</div>
+</a>
+
+<a href="email.html" class="card-link">
+<div class="card">
+<h3>📧 AI Email</h3>
+<p>Write professional emails.</p>
+</div>
+</a>
+
+</div>
+
+</section>
+<!-- Features Section -->
+
+<section id="features" class="features">
+
+<h2>✨ NovaAI Features</h2>
+
+<div class="feature-grid">
+
+<div class="card">
+<h3>🤖 Smart AI</h3>
+<p>Fast AI powered answers.</p>
+</div>
+
+<div class="card">
+<h3>⚡ Fast Response</h3>
+<p>Quick and smooth experience.</p>
+</div>
+
+<div class="card">
+<h3>🌍 Multi Tools</h3>
+<p>20+ AI tools in one place.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- Pricing -->
+
+<section id="pricing" class="features">
+
+<h2>💎 Pricing</h2>
+
+<div class="card">
+
+<h3>Free Plan</h3>
+
+<p>Basic NovaAI tools access.</p>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section id="faq" class="features">
+
+<h2>❓ Frequently Asked Questions</h2>
+
+<div class="faq-container">
+
+<div class="faq-item">
+
+<button class="faq-question">
+What is NovaAI?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+NovaAI is an all-in-one AI platform with Chat, Image, Code, Video, PDF and many other AI tools.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+Is NovaAI free?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Yes. Most tools are free to use. Premium features may be added in the future.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+Can NovaAI generate code?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Yes. NovaAI can generate HTML, CSS, JavaScript, Python, C++, Java and more.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<button class="faq-question">
+Does NovaAI work on mobile?
+<span>+</span>
+</button>
+
+<div class="faq-answer">
+Yes. NovaAI is fully responsive and works on mobile, tablet and desktop.
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Newsletter -->
+
+<section id="newsletter" class="features">
+
+<h2>📩 Subscribe to NovaAI</h2>
+
+<p>
+Get the latest AI updates directly in your inbox.
+</p>
+
+<div class="newsletter-box">
+
+<input
+type="email"
+id="newsletterEmail"
+placeholder="Enter your email">
+
+<button onclick="subscribeNewsletter()">
+Subscribe
+</button>
+
+</div>
+
+<p id="newsletterMessage"></p>
+
+</section>
+
+<!-- Contact -->
+
+<section id="contact" class="features">
+
+<h2>📩 Contact</h2>
+
+<div class="card">
+
+<p>
+Contact NovaAI Support
+</p>
+
+</div>
+
+</section>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+<div class="footer-logo">
+🤖 NovaAI
+</div>
+
+<p>
+One Platform. Unlimited AI Power.
+</p>
+
+<div class="footer-links">
+
+<a href="#home">Home</a>
+<a href="#tools">AI Tools</a>
+<a href="#features">Features</a>
+<a href="#pricing">Pricing</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+<p class="copyright">
+© 2026 NovaAI. All Rights Reserved.
+</p>
+
+</footer>
+
+<!-- Login Popup -->
+
+<div class="login-popup" id="loginBox">
+
+<div class="login-card">
+
+<button class="close-btn" onclick="closeLogin()">
+✖
+</button>
+
+<h2>🔐 NovaAI Login</h2>
+
+<input type="email" id="email" placeholder="Enter Email">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button class="submit-login" onclick="loginUser()">
+Login
+</button>
+
+<p>
+Don't have an account?
+<a href="#" onclick="signupUser()">Create Account</a>
+</p>
+
+<p>
+    <a href="#" onclick="forgotPassword()">
+        Forgot Password?
+    </a>
+</p>
+
+</div>
+
+</div>
+
+<button id="topBtn">⬆</button>
+
+<script type="module" src="firebase.js"></script>
+
+<script>
+
+// Aapka JavaScript yahan se shuru hoga...
+
+
+// ==========================
+// AI Tool Search
+// ==========================
+
+const search = document.getElementById("toolSearch");
+const tools = document.querySelectorAll(".card-link");
+const noResult = document.getElementById("noResult");
+
+search.addEventListener("input", () => {
+
+    let value = search.value.toLowerCase();
+    let found = false;
+
+    tools.forEach(tool => {
+
+        let text = tool.innerText.toLowerCase();
+
+        if(text.includes(value)){
+
+            tool.style.display = "block";
+            found = true;
+
+        }else{
+
+            tool.style.display = "none";
+
+        }
+
+    });
+
+    noResult.style.display = found ? "none" : "block";
+
+});
+
+
+// ==========================
+// Login Popup
+// ==========================
+
+function openLogin(){
+
+    document.getElementById("loginBox").style.display="flex";
+
+}
+
+function closeLogin(){
+
+    document.getElementById("loginBox").style.display="none";
+
+}
+
+
+// ==========================
+// Mobile Menu
+// ==========================
+
+function toggleMenu(){
+
+    document.querySelector(".menu").classList.toggle("active");
+
+}
+
+
+// ==========================
+// FAQ
+// ==========================
+
+const faqs = document.querySelectorAll(".faq-item");
+
+faqs.forEach(item=>{
+
+    const question = item.querySelector(".faq-question");
+
+    question.onclick = ()=>{
+
+        item.classList.toggle("active");
+
+    }
+
+});
+
+
+// ==========================
+// Newsletter
+// ==========================
+
+function subscribeNewsletter(){
+
+    const email = document.getElementById("newsletterEmail").value.trim();
+
+    const message = document.getElementById("newsletterMessage");
+
+    if(email===""){
+
+        message.style.color="red";
+        message.innerText="Please enter your email.";
+        return;
+
+    }
+
+    message.style.color="#00e5ff";
+    message.innerText="✅ Thank you for subscribing to NovaAI!";
+
+    document.getElementById("newsletterEmail").value="";
+
+}
+// ==========================
+// Loader
+// ==========================
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        const loader = document.getElementById("loader");
+
+        if(loader){
+            loader.style.display = "none";
+        }
+
+    }, 2000);
+
+});
+
+
+// ==========================
+// Back To Top Button
+// ==========================
+
+const topBtn = document.getElementById("topBtn");
+
+topBtn.style.display = "none";
+
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 300){
+
+        topBtn.style.display = "block";
+
+    }else{
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+topBtn.onclick = () => {
+
+    window.scrollTo({
+
+        top:0,
+        behavior:"smooth"
+
+    });
+
+}
+
+// ==========================
+// Profile System
+// ==========================
+
+function openProfile(){
+
+    let user = localStorage.getItem("novaUser");
+
+    if(user){
+
+        document.getElementById("userEmail").innerText = user;
+
+    }else{
+
+        document.getElementById("userEmail").innerText = "Guest User";
+
+    }
+
+let savedImage = localStorage.getItem("profileImage");
+
+if(savedImage){
+    document.getElementById("profileImage").src = savedImage;
+}
+
+    document.getElementById("profileBox").style.display = "flex";
+
+}
+
+
+function closeProfile(){
+
+    document.getElementById("profileBox").style.display = "none";
+
+}
+
+
+function logoutUser(){
+
+    localStorage.removeItem("novaUser");
+
+    alert("Logged out successfully");
+
+    closeProfile();
+
+}
+
+function uploadProfileImage() {
+
+    const file = document.getElementById("imageUpload").files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        document.getElementById("profileImage").src = e.target.result;
+
+        localStorage.setItem("profileImage", e.target.result);
+
+    };
+
+    reader.readAsDataURL(file);
+
+}
+
+// ==========================
+// Login System
+// ==========================
+
+async function loginUser() {
+
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    if (email === "" || password === "") {
+        alert("Please enter email and password");
+        return;
+    }
+
+    try {
+
+        await window.signInWithEmailAndPassword(
+            window.auth,
+            email,
+            password
+        );
+
+        localStorage.setItem("novaUser", email);
+
+        alert("✅ Login Successful");
+
+        closeLogin();
+
+    } catch (error) {
+
+        alert("❌ " + error.message);
+
+    }
+
+}
+
+async function forgotPassword() {
+
+    let email = document.getElementById("email").value.trim();
+
+    if (email === "") {
+        alert("Please enter your email first.");
+        return;
+    }
+
+    try {
+
+        await window.sendPasswordResetEmail(
+            window.auth,
+            email
+        );
+
+        alert("✅ Password reset email has been sent. Check your inbox.");
+
+    } catch (error) {
+
+        alert("❌ " + error.message);
+
+    }
+
+}
+
+async function signupUser() {
+
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    if (email === "" || password === "") {
+        alert("Please enter email and password");
+        return;
+    }
+
+    try {
+
+        await window.createUserWithEmailAndPassword(
+            window.auth,
+            email,
+            password
+        );
+
+        localStorage.setItem("novaUser", email);
+
+        alert("✅ Account Created Successfully");
+
+        closeLogin();
+
+    } catch (error) {
+
+        alert("❌ " + error.message);
+
+    }
+
+}
+
+</script>
+
+<!-- Profile Popup -->
+
+
+<div class="profile-popup" id="profileBox">
+
+    <div class="profile-card">
+
+        <button class="close-btn" onclick="closeProfile()">
+            ✖
+        </button>
+
+        <h2>👤 NovaAI Profile</h2>
+
+<img id="profileImage"
+src="https://via.placeholder.com/120"
+class="profile-image">
+
+<input
+type="file"
+id="imageUpload"
+accept="image/*"
+onchange="uploadProfileImage()">
+
+<p id="userEmail">Guest User</p>
+
+        <button class="logout-btn" onclick="logoutUser()">
+            🚪 Logout
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaAI Writer</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="chat-page">
+
+
+<div class="chat-header">
+📝 NovaAI Writer
+</div>
+
+
+
+<div class="chat-messages">
+
+
+<div class="ai-message">
+👋 I can help you write blogs, emails, articles and captions.
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="chat-input">
+
+
+<input type="text" placeholder="What do you want to write?">
+
+
+<button>
+➤
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+const input=document.querySelector(".chat-input input");
+
+const button=document.querySelector(".chat-input button");
+
+const messages=document.querySelector(".chat-messages");
+
+
+
+button.onclick=function(){
+
+
+let text=input.value.trim();
+
+
+if(text==="") return;
+
+
+
+let user=document.createElement("div");
+
+user.className="user-message";
+
+user.innerText=text;
+
+
+messages.appendChild(user);
+
+
+
+input.value="";
+
+
+
+
+let ai=document.createElement("div");
+
+ai.className="ai-message";
+
+
+ai.innerText=
+"🤖 NovaAI Writer: I can help create a professional "+text+" for you.";
+
+
+
+messages.appendChild(ai);
+
+
+
+messages.scrollTop=messages.scrollHeight;
+
+
+}
+
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaAI Tutor</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="chat-page">
+
+
+<div class="chat-header">
+📚 NovaAI AI Tutor
+</div>
+
+
+
+<div class="chat-messages">
+
+
+<div class="ai-message">
+👋 Ask any study question and NovaAI will help you learn.
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="chat-input">
+
+
+<input type="text" placeholder="Ask your study question...">
+
+
+<button>
+➤
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+const input = document.querySelector(".chat-input input");
+
+const button = document.querySelector(".chat-input button");
+
+const messages = document.querySelector(".chat-messages");
+
+
+
+button.onclick = function(){
+
+
+let text = input.value.trim();
+
+
+if(text === "") return;
+
+
+
+// User Question
+
+let user = document.createElement("div");
+
+user.className = "user-message";
+
+user.innerText = text;
+
+
+messages.appendChild(user);
+
+
+
+input.value = "";
+
+
+
+
+
+// Tutor Answer
+
+let ai = document.createElement("div");
+
+ai.className = "ai-message";
+
+
+ai.innerText =
+`📚 NovaAI Tutor:
+
+Question:
+${text}
+
+Answer:
+I will explain this topic step by step in an easy way.
+
+✅ Definition
+✅ Important points
+✅ Examples
+✅ Summary
+
+Keep learning 🚀`;
+
+
+
+messages.appendChild(ai);
+
+
+
+messages.scrollTop = messages.scrollHeight;
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaAI Email</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="chat-page">
+
+
+<div class="chat-header">
+📧 NovaAI Email Assistant
+</div>
+
+
+
+<div class="chat-messages">
+
+
+<div class="ai-message">
+👋 Tell me what email you want to write and NovaAI will create it.
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="chat-input">
+
+
+<input type="text" placeholder="Write your email request...">
+
+
+<button>
+➤
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+const input = document.querySelector(".chat-input input");
+
+const button = document.querySelector(".chat-input button");
+
+const messages = document.querySelector(".chat-messages");
+
+
+
+button.onclick = function(){
+
+
+let text = input.value.trim();
+
+
+if(text === "") return;
+
+
+
+// User Message
+
+let user = document.createElement("div");
+
+user.className = "user-message";
+
+user.innerText = text;
+
+
+messages.appendChild(user);
+
+
+
+input.value = "";
+
+
+
+
+// AI Email Reply
+
+let ai = document.createElement("div");
+
+ai.className = "ai-message";
+
+
+ai.innerText = 
+`📧 NovaAI Email:
+
+Subject: ${text}
+
+Dear Sir/Madam,
+
+I hope you are doing well.
+
+I am writing this email regarding ${text}.
+
+Please let me know if any further information is required.
+
+Thank you.
+
+Best Regards`;
+
+
+
+messages.appendChild(ai);
+
+
+
+messages.scrollTop = messages.scrollHeight;
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

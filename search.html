@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaAI Search</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="chat-page">
+
+
+<div class="chat-header">
+🔍 NovaAI Smart Search
+</div>
+
+
+
+<div class="chat-messages">
+
+
+<div class="ai-message">
+👋 Ask anything and NovaAI Search will help you find information.
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="chat-input">
+
+
+<input type="text" placeholder="Search anything...">
+
+
+<button>
+➤
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+const input = document.querySelector(".chat-input input");
+
+const button = document.querySelector(".chat-input button");
+
+const messages = document.querySelector(".chat-messages");
+
+
+
+button.onclick = function(){
+
+
+let text = input.value.trim();
+
+
+if(text === "") return;
+
+
+
+// User Search
+
+let user = document.createElement("div");
+
+user.className = "user-message";
+
+user.innerText = "🔍 Search: " + text;
+
+
+messages.appendChild(user);
+
+
+
+input.value = "";
+
+
+
+
+
+// AI Result
+
+let ai = document.createElement("div");
+
+ai.className = "ai-message";
+
+
+ai.innerText =
+`🔍 NovaAI Search Result:
+
+Your search query:
+"${text}"
+
+📌 Information found:
+- Explanation about ${text}
+- Important points
+- Related topics
+- Useful details
+
+✨ Search completed by NovaAI`;
+
+
+
+messages.appendChild(ai);
+
+
+
+messages.scrollTop = messages.scrollHeight;
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

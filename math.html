@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaAI Math Solver</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="chat-page">
+
+
+<div class="chat-header">
+🧮 NovaAI Math Solver
+</div>
+
+
+
+<div class="chat-messages">
+
+
+<div class="ai-message">
+👋 Enter any math problem and NovaAI will help solve it.
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="chat-input">
+
+
+<input type="text" placeholder="Enter your math problem...">
+
+
+<button>
+➤
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+const input = document.querySelector(".chat-input input");
+
+const button = document.querySelector(".chat-input button");
+
+const messages = document.querySelector(".chat-messages");
+
+
+
+button.onclick = function(){
+
+
+let text = input.value.trim();
+
+
+if(text === "") return;
+
+
+
+// User Problem
+
+let user = document.createElement("div");
+
+user.className = "user-message";
+
+user.innerText = "🧮 Problem: " + text;
+
+
+messages.appendChild(user);
+
+
+
+input.value = "";
+
+
+
+
+
+// AI Solution
+
+let ai = document.createElement("div");
+
+ai.className = "ai-message";
+
+
+ai.innerText =
+`🧮 NovaAI Math Solver:
+
+Problem:
+${text}
+
+Solution:
+
+Step 1: Understand the given question.
+
+Step 2: Apply the correct formula or method.
+
+Step 3: Calculate the answer.
+
+✅ Final answer will be generated here.
+
+Keep practicing mathematics 🚀`;
+
+
+
+messages.appendChild(ai);
+
+
+
+messages.scrollTop = messages.scrollHeight;
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaAI Chat</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="chat-page">
+
+
+<div class="chat-header">
+
+    <span>💬 NovaAI</span>
+
+    <button class="clear-chat" onclick="clearChat()">
+        🗑 Clear
+    </button>
+
+</div>
+
+
+
+
+
+<div class="chat-messages">
+
+<div class="ai-message">
+Hello 👋 I am NovaAI. How can I help you?
+</div>
+
+</div>
+
+
+
+
+
+<div class="chat-input">
+
+
+<input type="file" id="fileInput" hidden>
+
+
+<button class="upload-btn" onclick="fileInput.click()">
+📎
+</button>
+
+
+
+<input type="text" id="messageInput" placeholder="Message NovaAI...">
+
+
+
+<button class="voice-btn" onclick="startVoice()">
+🎤
+</button>
+
+
+
+<button class="send-btn">
+➤
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+const input = document.getElementById("messageInput");
+
+const button = document.querySelector(".send-btn");
+
+const messages = document.querySelector(".chat-messages");
+
+const fileInput = document.getElementById("fileInput");
+
+
+
+
+
+button.onclick = sendMessage;
+
+
+
+input.addEventListener("keypress",function(e){
+
+if(e.key==="Enter"){
+
+sendMessage();
+
+}
+
+});
+
+
+
+
+
+
+async function sendMessage(){
+
+
+let text=input.value.trim();
+
+
+
+if(text==="") return;
+
+
+
+// User Message
+
+let user=document.createElement("div");
+
+user.className="user-message";
+
+user.innerText=text;
+
+
+messages.appendChild(user);
+
+
+
+input.value="";
+
+
+
+
+
+// Typing animation
+
+let ai=document.createElement("div");
+
+ai.className="ai-message";
+
+ai.innerHTML="🤖 NovaAI is typing<span class='dots'>...</span>";
+
+
+messages.appendChild(ai);
+
+
+messages.scrollTop=messages.scrollHeight;
+
+
+
+
+
+try{
+
+
+const response = await fetch("http://localhost:3000/chat",{
+
+
+method:"POST",
+
+
+headers:{
+
+
+"Content-Type":"application/json"
+
+},
+
+
+body:JSON.stringify({
+
+message:text
+
+})
+
+
+});
+
+
+
+const data=await response.json();
+
+
+
+let reply="🤖 NovaAI: "+data.reply;
+
+
+
+ai.innerHTML="";
+
+
+
+let i=0;
+
+
+
+let typing=setInterval(()=>{
+
+
+ai.innerHTML += reply[i];
+
+
+i++;
+
+
+messages.scrollTop=messages.scrollHeight;
+
+
+
+if(i>=reply.length){
+
+clearInterval(typing);
+
+}
+
+
+
+},40);
+
+
+
+
+}
+
+catch(error){
+
+
+ai.innerText="❌ Server connection error";
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+// File Upload
+
+
+fileInput.onchange=function(){
+
+
+if(this.files.length){
+
+
+let file=this.files[0];
+
+
+
+let msg=document.createElement("div");
+
+
+msg.className="user-message";
+
+
+msg.innerText="📎 File selected: "+file.name;
+
+
+
+messages.appendChild(msg);
+
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+// Voice Input
+
+
+function startVoice(){
+
+
+
+if(!("webkitSpeechRecognition" in window)){
+
+
+alert("Voice not supported");
+
+
+return;
+
+
+}
+
+
+
+let recognition=new webkitSpeechRecognition();
+
+
+
+recognition.lang="en-US";
+
+
+
+recognition.start();
+
+
+
+
+recognition.onresult=function(event){
+
+
+input.value=event.results[0][0].transcript;
+
+function clearChat(){
+
+    messages.innerHTML = `
+        <div class="ai-message">
+            Hello 👋 I am NovaAI. How can I help you?
+        </div>
+    `;
+
+}
+
+};
+
+
+
+}
+
+
+
+</script>
+
+
+</body>
+
+</html>

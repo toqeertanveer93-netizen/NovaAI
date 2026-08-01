@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NovaAI Image Editor</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="chat-page">
+
+
+<div class="chat-header">
+🖼️ NovaAI Image Editor
+</div>
+
+
+
+<div class="chat-messages">
+
+
+<div class="ai-message">
+👋 Tell me how you want to edit your image.
+</div>
+
+
+</div>
+
+
+
+
+
+<div class="chat-input">
+
+
+<input type="text" placeholder="Describe image editing...">
+
+
+<button>
+➤
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+const input = document.querySelector(".chat-input input");
+
+const button = document.querySelector(".chat-input button");
+
+const messages = document.querySelector(".chat-messages");
+
+
+
+button.onclick = function(){
+
+
+let text = input.value.trim();
+
+
+if(text === "") return;
+
+
+
+// User Request
+
+let user = document.createElement("div");
+
+user.className = "user-message";
+
+user.innerText = "🖼️ Edit Request: " + text;
+
+
+messages.appendChild(user);
+
+
+
+input.value = "";
+
+
+
+
+
+// AI Response
+
+let ai = document.createElement("div");
+
+ai.className = "ai-message";
+
+
+ai.innerText =
+`🖼️ NovaAI Image Editor:
+
+Your editing request:
+${text}
+
+Available AI edits:
+✅ Remove background
+✅ Improve quality
+✅ Change style
+✅ Add effects
+✅ Enhance colors
+
+✨ Image editing idea created!`;
+
+
+
+messages.appendChild(ai);
+
+
+
+messages.scrollTop = messages.scrollHeight;
+
+
+}
+
+
+
+</script>
+
+
+
+</body>
+
+</html>
